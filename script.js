@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-	// --- LÓGICA DO MENU HAMBURGUER (MOBILE) ---
+	// --- LÓGICA DO MENU HAMBURGUER (MOBILE) --- //
 	const botaoHamburger = document.getElementById("menu-hamburger");
 	const menuLinks = document.querySelector(".menu-links");
 	botaoHamburger.addEventListener("click", () => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	// --- LÓGICA DAS ANIMAÇÕES DE SCROLL (FADE IN) ---
+	// --- LÓGICA DAS ANIMAÇÕES DE SCROLL (FADE IN) --- //
 	const observadorAnimacao = new IntersectionObserver(
 		(entradas) => {
 			for (const entrada of entradas) {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		observadorAnimacao.observe(el);
 	}
 
-	// --- LÓGICA PARA MARCAR LINK ATIVO NO MENU CONFORME SCROLL ---
+	// --- LÓGICA PARA MARCAR LINK ATIVO NO MENU CONFORME SCROLL --- //
 	const secoes = document.querySelectorAll("main[id], section[id]");
 	const linksNavegacao = document.querySelectorAll("nav .menu-links li a");
 	const observadorSecao = new IntersectionObserver(
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		observadorSecao.observe(secao);
 	}
 
-	// --- LÓGICA DO BOTÃO VOLTAR AO TOPO ---
+	// --- LÓGICA DO BOTÃO VOLTAR AO TOPO --- //
 	const botaoVoltarTopo = document.getElementById("botao-voltar-topo");
 	window.addEventListener("scroll", () => {
 		if (window.scrollY > 300) {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
-	// --- LÓGICA DO TEMA DARK ---
+	// --- LÓGICA DO TEMA DARK --- //
 	const botaoAlternarTema = document.getElementById("botao-alternar-tema");
 	const iconeTema = botaoAlternarTema.querySelector("i");
 

@@ -618,8 +618,6 @@ footer {
   9. RESPONSIVIDADE (MEDIA QUERIES)
 =====================================================
 */
-
-/* ---- TELAS ATÉ 992PX (TABLETS) ---- */
 @media (max-width: 992px) {
     .sobre-container {
         flex-direction: column;
