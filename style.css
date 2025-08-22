@@ -1,3 +1,4 @@
+
 :root {
     --cor-fundo: #FFFFFF;
     --cor-fundo-secundaria: #F8F9FA;
@@ -119,14 +120,6 @@ section {
     margin-right: auto;
 }
 
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--cor-texto-secundario);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--cor-borda);
-}
-
 
 /* =====================================================
   5. COMPONENTES REUTILIZÁVEIS
@@ -178,10 +171,12 @@ footer {
 }
 
 .logomarca {
-    font-weight: 800;
-    font-size: 1.5rem;
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
+    font-size: 1.9rem;
     text-decoration: none;
     color: var(--cor-texto);
+    margin-left: 2rem;
 }
 
 .menu-links {
@@ -226,6 +221,14 @@ footer {
 
 .inicio-conteudo {
     max-width: 750px;
+    
+}
+
+.inicio-conteudo h1 {
+    font-family: "Jost", sans-serif;
+    font-weight: 800;
+    color: #E9ECEF;
+    margin-bottom: 1rem;
 }
 
 .inicio-conteudo p {
@@ -493,6 +496,106 @@ footer {
     transform: translateY(0);
 }
 
+footer {
+    background-color: var(--cor-fundo-secundaria);
+    padding: 4rem 2rem 1.5rem 2rem;
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.rodape-coluna {
+    flex: 1;
+    min-width: 220px; /* Garante que as colunas não fiquem muito espremidas */
+}
+
+.rodape-coluna .logomarca {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.rodape-descricao {
+    line-height: 1.7;
+}
+
+.rodape-coluna h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rodape-coluna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rodape-coluna ul li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.rodape-coluna ul li a {
+    text-decoration: none;
+    color: var(--cor-texto-secundario);
+    transition: color 0.3s ease;
+}
+
+.rodape-coluna ul li a:hover {
+    color: var(--cor-cta);
+}
+
+.rodape-coluna ul li i {
+    color: var(--cor-cta);
+    font-size: 1.1rem;
+    width: 20px; /* Alinha os ícones verticalmente */
+    text-align: center;
+}
+
+.rodape-copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.85rem;
+}
+
+/* ---- Ajuste de Responsividade para o Rodapé ---- */
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .rodape-coluna {
+        text-align: center;
+    }
+    
+    .rodape-coluna .logomarca {
+        margin: 0 auto 1rem auto;
+    }
+
+    .rodape-coluna ul {
+        justify-content: center;
+    }
+
+    .rodape-coluna ul li {
+        justify-content: center;
+    }
+}
+
 
 /* =====================================================
   8. ANIMAÇÕES
@@ -570,6 +673,15 @@ footer {
 
     .botao-hamburger {
         display: block;
+    }
+    .sobre-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .logomarca {
+        margin-left: 0;
     }
 }
 
