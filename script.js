@@ -9,24 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	// Fecha o menu se um link for clicado (útil para navegação na mesma página)
-	document.querySelectorAll(".nav-links a").forEach((link) => {
+	for (const link of document.querySelectorAll(".nav-links a")) {
 		link.addEventListener("click", () => {
 			if (navLinks.classList.contains("active")) {
 				navLinks.classList.remove("active");
 			}
 		});
-	});
+	}
 
 	// --- LÓGICA DAS ANIMAÇÕES DE SCROLL (FADE IN) ---
 	// Esta API é super eficiente para observar quando um elemento entra na tela
 	const observer = new IntersectionObserver(
 		(entries) => {
-			entries.forEach((entry) => {
+			for (const entry of entries) {
 				// Se o elemento estiver visível na tela
 				if (entry.isIntersecting) {
 					entry.target.classList.add("visible");
 				}
-			});
+			}
 		},
 		{
 			threshold: 0.1, // A animação começa quando 10% do elemento estiver visível
@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Pega todos os elementos que devem ter a animação e manda o observer "observá-los"
 	const elementsToFadeIn = document.querySelectorAll(".fade-in-element");
-	elementsToFadeIn.forEach((el) => observer.observe(el));
+	for (const el of elementsToFadeIn) {
+		observer.observe(el);
+	}
 
 	// --- LÓGICA PARA MARCAR LINK ATIVO NO MENU CONFORME SCROLL ---
 	const sections = document.querySelectorAll(".content-section");
@@ -43,10 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const sectionObserver = new IntersectionObserver(
 		(entries) => {
-			entries.forEach((entry) => {
+			for (const entry of entries) {
 				if (entry.isIntersecting) {
 					// Remove a classe 'active' de todos os links
-					navLi.forEach((link) => link.classList.remove("active"));
+					for (const link of navLi) {
+						link.classList.remove("active");
+					}
 
 					// Pega o ID da seção atual (ex: 'about', 'services')
 					const currentSectionId = entry.target.id;
@@ -59,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						activeLink.classList.add("active");
 					}
 				}
-			});
+			}
 		},
 		{
 			rootMargin: "-30% 0px -70% 0px", // Ativa quando a seção está no meio da tela
@@ -67,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	);
 
 	// Observa cada uma das seções de conteúdo
-	sections.forEach((section) => {
+	for (const section of sections) {
 		sectionObserver.observe(section);
-	});
+	}
 });

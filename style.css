@@ -113,7 +113,7 @@ header { position: sticky; top: 0; z-index: 1000; }
     border-radius: 8px; }
 .about-text { 
     flex: 1.5;
-    margin-left: 10rem;
+    margin-left: 10rem
 }
 .about-text h2 { 
     text-align: left;
@@ -191,9 +191,15 @@ footer { text-align: center; padding: 2rem; color: var(--cor-texto-secundario); 
         transition: right 0.4s ease-in-out;
         border-left: 1px solid var(--cor-borda);
     }
-    .about-text {
-        margin: 0;
+    .about-image img { 
+        width: 100%;
+        max-width: 350px;
     }
+    .about-text { 
+        margin: 0 auto;
+        text-align: center;
+    }
+
     .nav-links.active { right: 0; }
     .hamburger { display: block; }
 }
