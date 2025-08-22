@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <img src="./img//screen.png" alt="Demonstração animada do site">
+  <img src="./img//fm.png" alt="Demonstração animada do site">
 </p>
 
 ---
