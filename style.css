@@ -1,0 +1,202 @@
+/*
+=====================================================
+== DESIGN 3.0: PROFISSIONAL, CLEAN & MODERNO ==
+=====================================================
+*/
+
+/* ---- CONFIGURAÇÕES GERAIS E VARIÁVEIS ---- */
+:root {
+    --cor-fundo: #FFFFFF;
+    --cor-fundo-secundaria: #F8F9FA;
+    --cor-texto: #212529;
+    --cor-texto-secundario: #6C757D;
+    --cor-cta: #059669; /* Verde esmeralda */
+    --cor-cta-hover: #047857;
+    --cor-borda: #DEE2E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+section { padding: 6rem 2rem; }
+.content-section { max-width: 1100px; margin-left: auto; margin-right: auto; }
+
+/* ---- TIPOGRAFIA ---- */
+h1, h2, h3 { font-weight: 800; line-height: 1.2; }
+h1 { font-size: 3.25rem; color: var(--cor-fundo); }
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: 4rem; color: var(--cor-texto); }
+h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--cor-texto); }
+p { color: var(--cor-texto-secundario); margin-bottom: 1rem; }
+.highlight { color: var(--cor-cta); }
+
+/* ---- CABEÇALHO E NAVEGAÇÃO ---- */
+header { position: sticky; top: 0; z-index: 1000; }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cor-borda);
+}
+.logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: var(--cor-texto); }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { text-decoration: none; color: var(--cor-texto); font-weight: 700; font-size: 1rem; transition: color 0.3s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--cor-cta); }
+
+/* ---- SEÇÃO HERO ---- */
+#hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 1rem;
+    background: linear-gradient(rgba(10, 20, 30, 0.6), rgba(10, 20, 30, 0.6)), url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
+}
+.hero-content { max-width: 750px; }
+.hero-content p { color: #E9ECEF; font-size: 1.125rem; max-width: 600px; margin: 1rem auto 2.5rem auto; }
+
+/* ---- BOTÕES ---- */
+.cta-button {
+    background-color: var(--cor-cta);
+    color: #FFF;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid var(--cor-cta);
+}
+.cta-button:hover { 
+    background-color: var(--cor-cta-hover); 
+    border-color: var(--cor-cta-hover); 
+    transform: translateY(-3px); 
+}
+.cta-button .fab { 
+    margin-right: 0.75rem; 
+    font-size: 1.25rem; 
+    vertical-align: middle; 
+}
+
+/* ---- SEÇÃO SOBRE ---- */
+.about-container {
+     display: flex; 
+     align-items: center; 
+     gap: 4rem; 
+    }
+.about-image { 
+    flex: 1; 
+    min-width: 300px; 
+    text-align: center; }
+.about-image img { 
+    width: 100vw; 
+    max-width: 500px; 
+    border-radius: 8px; }
+.about-text { 
+    flex: 1.5;
+    margin-left: 10rem;
+}
+.about-text h2 { 
+    text-align: left;
+}
+
+/* ---- SERVIÇOS, ÁREAS, DEPOIMENTOS (CARDS) ---- */
+#services, #testimonials { background-color: var(--cor-fundo-secundaria); }
+.services-container, .areas-container, .testimonials-container { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.service-card, .area-list, .testimonial-card {
+    background-color: var(--cor-fundo);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+.service-card:hover, .area-list:hover, .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07); }
+
+.service-card { flex-basis: 320px; display: flex; flex-direction: column; align-items: center; }
+.area-list { flex-basis: 350px; }
+.testimonial-card { flex-basis: 420px; }
+
+.service-card i {
+    font-size: 1.5rem;
+    color: var(--cor-cta);
+    background-color: #E6F5F1; /* Verde bem claro */
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+.area-list ul { list-style: none; padding: 0; }
+.testimonial-card span { font-weight: 700; color: var(--cor-cta); }
+
+/* ---- PORTFÓLIO ---- */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.gallery-item { overflow: hidden; border-radius: 8px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* ---- CONTATO & RODAPÉ ---- */
+#contact { background: var(--cor-fundo-secundaria); text-align: center; }
+footer { text-align: center; padding: 2rem; color: var(--cor-texto-secundario); font-size: 0.9rem; border-top: 1px solid var(--cor-borda); }
+
+/* ---- ANIMAÇÕES & MENU MOBILE ---- */
+.fade-in-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in-element.visible { opacity: 1; transform: translateY(0); }
+.hamburger { display: none; background: none; border: none; color: var(--cor-texto); font-size: 1.8rem; cursor: pointer; z-index: 1001; }
+
+/* ---- RESPONSIVIDADE ---- */
+@media (max-width: 992px) {
+    .about-container { flex-direction: column; text-align: center; gap: 2rem; }
+    .about-text h2 { text-align: center; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 15px; }
+    section { padding: 4rem 1.5rem; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; margin-bottom: 3rem; }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--cor-fundo);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease-in-out;
+        border-left: 1px solid var(--cor-borda);
+    }
+    .nav-links.active { right: 0; }
+    .hamburger { display: block; }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 14px; }
+    section { padding: 3.5rem 1rem; }
+    h1 { font-size: 2rem; }
+}
